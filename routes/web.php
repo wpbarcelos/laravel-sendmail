@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SendMailController;
 
-Route::get('/sendmail', [SendMailcontroller::class, 'create'])->name('sendmail.create');
 
-Route::post('/sendmail', [SendMailcontroller::class, 'store'])->name('sendmail.store');
+Route::view('/','welcome');
+
+Route::get('/sendmail', [SendMailController::class, 'create'])->name('sendmail.create');
+
+Route::post('/sendmail', [SendMailController::class, 'store'])->name('sendmail.store');
